@@ -14,13 +14,37 @@ I will make sure I have a narrow scope for my project, at least initially so I c
 ## Implementation plan
 **How much time do you think you'll need for the various components of your language (e.g., finding a host language, implementing the semantics, the parser, tools, etc)?**
 
-Here is an component and time estimate of 
+Here is an component / time estimate chart:
 
-Note: any changes will be noted in the project notebook during the appropriate week. 
+| Part | Time Estimate |
+|:-----|:--------------|
+| Finding a host language and proper tools for implementation | 1 week, especially finding an encoding for the constraints |
+| Implementing the semantics | 1 week |
+| Implementing the parser | 1 week |
+| Joining together, first hello world program | 1 week |
+| User testing & feedback, integrate | < 1 week | 
+| Documentation/ Install instructions, better error handling | < 1 week | 
+Expansion of language with more features | stretch goal, will determine if/when I get here | 
+
+Note: This is an initial survey of the pieces needed for the project. Any changes will be noted in the project notebook during the appropriate week. 
 
 **Provide a brief schedule (e.g., with a deliverable every week) for your project.**
 
-Note: this is a initial project of my work schedule on the project, which is subject to change at any time, especially as I make progress and conditions of the project change (i.e. if one part takes shorter or longer than projected). Changes will be noted in the project notebook at the appropriate week. 
+| Deliverable | Date | 
+|:------------|:-----|
+| Finding a host language and proper tools for implementation | November 9th |
+| [Language design and implementation overview](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html#lang-overview) | November 16th | 
+| Implementing the semantics | November 19th  |
+| [Prototype](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html#prototype) | November 23rd | 
+| Implementing the parser | November 23rd |
+| Joining together, first hello world program | November 30th - December 2 |
+| [Preliminary evaluation](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html#evaluation) | December 1st | 
+| User testing & feedback, integrate | December 2 - December 7 | 
+| Documentation/ Install instructions, better error handling | December 7th | 
+| Final [Product](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html#product) and [Write up](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html#write-up) | December 12th | 
+| [Demo / Presentation](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html#talk) | December 18th | 
+
+Note: The later date in the chart represents a more realistic goal with flexible timing. This is a initial project of my work schedule on the project, which is subject to change at any time, especially as I make progress and conditions of the project change (i.e. if one part takes shorter or longer than projected). Changes will be noted in the project notebook at the appropriate week. 
 
 
 ## Teamwork plan  

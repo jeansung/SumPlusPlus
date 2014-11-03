@@ -41,11 +41,11 @@ Not really. A weighted sum can be calcualted from an excel spreadsheet. There do
 I did find test creation tools online for teachers, for example, [here](https://www.easytestmaker.com/), [here](http://www.schoolhousetech.com/Test/), and [here](http://www.quizinator.com/). Some of these tools do provide the option to categorize different types of problems with tags, but none of these tools are concerned with making tests that incorporate custom constraints  or using numerical methods to analyze the test's properities. 
 
 **If so, what are they, and how might they influence your language design and implementation?**  
-Not applicable becaue of my answer to the previous question.
+Not applicable because of my answer to the previous question.
 
 ## Language design
 **If you had to capture your DSL's design in one sentence, what would it be?**  
-Takes a set of (type, difficuly) pair and check it against a set of rules to see if the input is consistent against the rules. 
+Takes a set of (type, difficulty) pair and check it against a set of rules to see if the input is consistent against the rules. 
 
 **What constitutes a program in your language?**  
 A program is a set of (type, difficulty) pairs and a set of one or more rules. 
@@ -60,7 +60,7 @@ The inputs that the program will take are one or more of type and difficulty pai
 A data structure to store the pairs of type and difficulties - maybe an `array` of some sort. I will need to iterate over the input array, so maybe a `loop`. I will need to determine `if` consistency is followed, so maybe I will need a way of checking. 
 
 **What kinds of things might go wrong in a program in this domain (e.g., syntax errors, compile-time errors, run-time errors)?**  
-Like most langauges, there could be things that go wrong. The biggest thing I anticipate as an error is if users create contradictory rules. For example, if a rule that says that categories must sum to at least 10 and another rule that says those categories cannot sum to more than 9, it would be problematic. Of course, syntax error and other types of errors might happen.
+Like most languages, there could be things that go wrong. The biggest thing I anticipate as an error is if users create contradictory rules. For example, if a rule that says that categories must sum to at least 10 and another rule that says those categories cannot sum to more than 9, it would be problematic. Of course, syntax error and other types of errors might happen.
 
 **How might you design your language to prevent such errors or to clearly communicate the results of errors to the user?**  
 I will design my language to encourage people to enter correct and consistent (i.e. non contradictory) rules whenever possible. The input formate for the types and difficult will be presented in a chart, similar to [this](https://docs.google.com/a/g.hmc.edu/drawings/d/1s66OigYr9tjV2eS_UL-D5rtic1B1mTxPinMK_0AyMF4/edit) so that users can selected which points they want with ease.Rules will be checked against each other as they are inputed so that impossible rules that are contradictory cannot be created.
@@ -74,7 +74,7 @@ As for syntax and compile time errors, I will try it out with users (i.e. farthe
 Here is an image that depicts a typical run of the program:
 ![](https://docs.google.com/drawings/d/1s66OigYr9tjV2eS_UL-D5rtic1B1mTxPinMK_0AyMF4/pub?w=960&h=720)
 
-First, people input the frame of what they have- types and difficulities. Then they select the options which they want. After that, they can input the rules, at first selecting from a specific set and customizing based on the categories they selected. Then, when the program is executed in my DSL, the result will return as `consistent` or `inconsistent`. 
+First, people input the frame of what they have- types and difficulties. Then they select the options which they want. After that, they can input the rules, at first selecting from a specific set and customizing based on the categories they selected. Then, when the program is executed in my DSL, the result will return as `consistent` or `inconsistent`. 
 
 Here is a sample program of a more simple nature, a `Hello World` program, per say.
 ![](https://docs.google.com/drawings/d/1oSjX7MIUAJfmSEWhdJA7cH3WaUsSsQ8-Q_65wL1ZXeQ/pub?w=960&h=720)

@@ -3,9 +3,6 @@
 [Jean Sung](http://cs.hmc.edu)  
 Harvey Mudd College 
 
-## Description of what I am making
-I am trying to make a tool that will 
-
 
 ## Current State of the Project
 Design phase and planning  

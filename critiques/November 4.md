@@ -1,3 +1,5 @@
+Alejandro critiqued Novemeber 5. 2014
+
 ##### What are one or more things that you like about this project? What's exciting?
 
 I like the idea of giving the power of computaters to those a group of people who wouldn't otherwaise have it, namely gymnists and their coaches. There are lot of things we do that a computer could do much better, so any project like this one that helps people put those aspects of their work into a computer so they can focus on other aspects is exciting. 

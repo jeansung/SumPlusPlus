@@ -21,8 +21,8 @@ Much as the same answer I just gave above. The challenge will come in the DSL fo
 
 ##### What are the primitives in this language?
 
-Type of move
-Point Values
+Type of move  
+Point Values  
 Numbers used in contraints
 
 Pretty simple language with complicated design decisions. I think this was a great choice for a DSL.

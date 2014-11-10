@@ -5,11 +5,14 @@ Harvey Mudd College
 
 
 ## Current State of the Project
-Design phase and planning  
+
+Right now: Language implementation & design with a prototype coming soon.
+
+[Click here](https://drive.google.com/open?id=0B9z84Or5GzOnckhVZ0VnMTdVaFk&authuser=0) for the pre-prototype mockup.
 
 This is what a sample program run might look like (rough mock up): 
 ![](https://docs.google.com/drawings/d/1s66OigYr9tjV2eS_UL-D5rtic1B1mTxPinMK_0AyMF4/pub?w=960&h=720)
 
-Click [here](https://github.com/jeansung/project-notebook) for the latest updates on this project's progress.
+See [the project notebook](https://github.com/jeansung/project-notebook) for the latest updates on this project's progress.
 
 

@@ -57,20 +57,26 @@ There aren't really any other DSLs or tools that does this. You could make a sim
 
 **Your choice of an internal vs. external implementation and how and why you made that choice.**
 
-External
-easier because 
+External implementation. I made this decision because I have a clear idea of what I want to do (what things I will allow) and starting from the ground up in terms of designing makes it easier to limit what the user can do (so less ways to make errors). 
+
+Also, with what I have made, embedding the language as an internal implementation doesn't make it easier. 
 
 **Your choice of a host language and how and why you made that choice.**
 
-pyhton?
+Python is my host language. I made this decision largely because 
+* it interfaces with Excel
+* easy to work with (a lot of libraries)
 
 **Any significant syntax design decisions you've made and the reasons for those decisions.**
 
-talbes are just a list of values and a list of rules 
+I had decided to make tables just a list of values and a list of rules (in a plain text file) to simplify the table creation process. 
 
-TODO: MORE ABOUT THE GRAMMAR OF THE ACTUAL RULE DESIGN 
-
+<!--
+TODO : More about the grammar of the rules. 
+-->
 **An overview of the architecture of your system.**
 
+<!--
+TODO: Draw something for it and show the Semantics/ IR /Semantics  transition.
+ -->
 
-Draw something for it and show syntx IR semantics 

@@ -1,0 +1,22 @@
+# Input: string of file name
+# Output: list of list where
+# First list dimension: lists of each line
+# Second list dimension: list of artists, as strings
+def fileIO(inputFileName):
+    # handles utf-8 as per requirements
+    file = codecs.open(inputFileName, encoding='utf-8')
+    inputArray = []
+    for line in file:
+        line = line.rstrip()
+        line = line.split(',')
+        inputArray.append(line)
+    file.close()
+    return inputArray
+
+    tel = {'a': 0, 'b': 1}
+
+    c
+    d
+    e
+    f
+    g

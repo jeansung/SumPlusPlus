@@ -6,7 +6,15 @@ Harvey Mudd College
 
 ## Current State of the Project
 
-Right now: Language implementation & design with a prototype coming soon.
+Right now: Pre - prototype phase 
+
+Like to the video of the run through of the current program 
+
+
+
+
+
+
 
 [Click here](https://drive.google.com/open?id=0B9z84Or5GzOnckhVZ0VnMTdVaFk&authuser=0) for the pre-prototype mockup.
 

@@ -21,7 +21,7 @@ from excelMapping import EXCEL_ROW_MAPPING
 
 
 EXCEL_FILE_EXTENSION = ".xls"
-TABLE_BUFFER_ROW = 2
+TABLE_BUFFER_ROW = 1
 TABLE_BUFFER_COL = 2
 
 def main():
@@ -47,10 +47,11 @@ def main():
 	(freeRow, freeCol, numInputsColumn) = createNumberOfInputs(wb, ws, types,
 		 values, freeRow, freeCol)
 
+
 	# input rules 
 	# Parse rules under the assumption that they 
 	# Hardcoded for now, will implement as taking in stuff later 
-	rule1 = limitTotalSum(">", 10, values, intermediateSumRow )
+	rule1 = limitTotalSum(">", 10, values, intermediateSumRow+1 )
 	ws.write(freeRow+5, 3, xlwt.Formula(rule1))
 
 

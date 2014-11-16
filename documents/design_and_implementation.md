@@ -75,6 +75,7 @@ A major syntax decision I made this week that is different from the original des
 
 **An overview of the architecture of your system.**
 
+![](https://github.com/jeansung/project/raw/master/work%20products/system_architecture.pdf)
 <!--
 TODO: Draw something for it and show the Semantics/ IR /Semantics  transition.
  -->

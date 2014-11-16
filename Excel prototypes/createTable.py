@@ -2,15 +2,20 @@ import xlwt
 import codecs
 import sys
 
-from datetime import datetime
-
-# you must program with 2 input fillesand a name for your output excel file
+# you must program with 2 input filles and a name for your output excel file
 # eventually change so that you run with nothing and force while loop to take
 #in  the 3 inputs
 # LIMITATIONS:
 # -  Only supports excel file through 26 values (Need to feed it more of the excel columns)
 # Maximum excel coulm XFD 
 # Formula: 	# ws.write(2, 2, xlwt.Formula("A3+B3"))
+# Instead of free row and column
+# create a hash table, check before inserting, hash after 
+## supports total right now
+## Need to add support for Labels
+# 
+
+
 
 EXCEL_ROW_MAPPING = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z'}
 
@@ -35,81 +40,38 @@ def main():
 		 freeRow, freeCol)
 
 	# calculate input sums/ # inputs per table 
-	(freeRow, freeCol) = createSumFromDifficulty(wb, ws, types, values, freeRow, freeCol)
-	(freeRow, freeCol) = createNumberOfInputs(wb, ws, types, values, freeRow, freeCol)
+	(freeRow, freeCol, intermediateSumRow) = createSumFromDifficulty(wb, ws, types, values, freeRow, freeCol)
+	(freeRow, freeCol, numInputsColumn) = createNumberOfInputs(wb, ws, types, values, freeRow, freeCol)
 
 	# input rules 
 	# Parse rules under the assumption that they 
-	# are correct (refer to table included )
+	# Hardcoded for now, will implement as taking in stuff later 
+	rule1 = limitTotalSum(">", 10, values, intermediateSumRow )
+	ws.write(freeRow+5, 3, xlwt.Formula(rule1))
 
 
-	print freeRow
-	print freeCol
 	wb.save(outputFileName + EXCEL_FILE_EXTENSION)
 
 	return 
 
-# Create column that counts number 
-def createNumberOfInputs(wb, ws, types, values, freeRow, freeCol):
-	for type in range (0, len(types)):
-		adjIndex = type + 1
-		#Default for now 
-		startColIndex = 1
-		startCol = EXCEL_ROW_MAPPING[startColIndex]
-		endColIndex = startColIndex + len(values) - 1
-		endCol = EXCEL_ROW_MAPPING[endColIndex]
+
+## Rule Creation Methods (to change after grammar)
+## Return Strings right now
+def limitTotalSum(operator, totalValue, values, intermediateSumRow):
+	rowStart = 1
+	rowStartStr = EXCEL_ROW_MAPPING[rowStart] + str(intermediateSumRow)
+	rowEnd = rowStart + len(values) -1
+	rowEndStr = EXCEL_ROW_MAPPING[rowEnd] + str(intermediateSumRow)
 
 
-		startColStr = str(startCol) + str(adjIndex+1)
-		endColStr = str(endCol) + str(adjIndex+1)
+	innerFormulaStr = "SUM(" + rowStartStr + ":" + rowEndStr + ")"
+	formulaStr = "IF(" + innerFormulaStr + operator + str(totalValue) + "," + "0" + "," + "1" + ")"
+	return formulaStr
+
+#def limitTotalInputs(operator, totalNumber, types, numInputsColumn):
 
 
-		formulaStr  = "SUM(" + startColStr + ":" + endColStr  + ")"
-
-		row = adjIndex
-		col = endColIndex + TABLE_BUFFER_ROW
-		# write it in the row col
-		ws.write(row, col, xlwt.Formula(formulaStr))
-	freeCol = freeCol + TABLE_BUFFER_COL + 1
-	return (freeRow, freeCol)
-
-
-	# create # input tables
-	# for each of the rows (i.e. types) so through the number of values
-	# col start,  get letter 
-	# col end , get letter
-	# row number is index 
-	# Sum (Start: Ennd)
-
-
-
-
-
-# Create row of sums from each multiplier 
-def createSumFromDifficulty(wb, ws, types, values, freeRow, freeCol):
-	for difficulty in range(len(values)):
-		adjIndex = difficulty + 1
-
-		colLetter = EXCEL_ROW_MAPPING[adjIndex]
-		multiplierRow = 1
-		startRow = multiplierRow + 1
-		endRow = startRow + (len(types) -1)
-
-		multiplierRowStr = colLetter + str(multiplierRow)
-		startRowStr = colLetter + str(startRow)
-		endRowStr = colLetter + str(endRow)
-
-		formulaStr = "SUM(" + startRowStr + ":" + endRowStr  + ")" + "*" + multiplierRowStr
-
-		row = freeRow
-		col = adjIndex
-
-		ws.write(row, col, xlwt.Formula(formulaStr))
-
-	freeRow = freeRow + 1 
-	return (freeRow, freeCol)	
-
-
+## Helper methods 
 
 # Check to see if command line arguments are correct 
 def properInputFiles():
@@ -144,7 +106,6 @@ def createInitialTable(wb, ws, typeFileName, valueFileName, freeRow, freeCol):
 		freeCol = adjIndex +1 
 
 	return (freeRow, freeCol, types, values) 
-
 
 # Takes a file name as a string
 # Returns a list of strings of types
@@ -182,6 +143,57 @@ def inputValues(filename):
 		values.append(numValue)
 	file.close()
 	return values
+
+# Create column that counts number 
+def createNumberOfInputs(wb, ws, types, values, freeRow, freeCol):
+	for type in range (0, len(types)):		
+		adjIndex = type + 1
+		#Default for now 
+		startColIndex = 1
+		startCol = EXCEL_ROW_MAPPING[startColIndex]
+		endColIndex = startColIndex + len(values) - 1
+		endCol = EXCEL_ROW_MAPPING[endColIndex]
+
+
+		startColStr = str(startCol) + str(adjIndex+1)
+		endColStr = str(endCol) + str(adjIndex+1)
+
+
+		formulaStr  = "SUM(" + startColStr + ":" + endColStr  + ")"
+
+		row = adjIndex
+		col = endColIndex + TABLE_BUFFER_ROW
+		numInputsColumn = endColIndex + TABLE_BUFFER_ROW
+		# write it in the row col
+		ws.write(row, col, xlwt.Formula(formulaStr))
+
+	freeCol = freeCol + TABLE_BUFFER_COL + 1
+	return (freeRow, freeCol, numInputsColumn)
+
+# Create row of sums from each multiplier 
+def createSumFromDifficulty(wb, ws, types, values, freeRow, freeCol):
+	for difficulty in range(len(values)):
+		adjIndex = difficulty + 1
+
+		colLetter = EXCEL_ROW_MAPPING[adjIndex]
+		multiplierRow = 1
+		startRow = multiplierRow + 1
+		endRow = startRow + (len(types) -1)
+
+		multiplierRowStr = colLetter + str(multiplierRow)
+		startRowStr = colLetter + str(startRow)
+		endRowStr = colLetter + str(endRow)
+
+		formulaStr = "SUM(" + startRowStr + ":" + endRowStr  + ")" + "*" + multiplierRowStr
+
+		row = freeRow + TABLE_BUFFER_ROW
+		col = adjIndex
+
+		ws.write(row, col, xlwt.Formula(formulaStr))
+
+	intermediateSumRow = freeRow + TABLE_BUFFER_ROW
+	freeRow = freeRow + TABLE_BUFFER_ROW + 1 
+	return (freeRow, freeCol, intermediateSumRow )	
 
 
 # automatically runs main method when script runs

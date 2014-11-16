@@ -1,23 +1,24 @@
 import xlwt
 import codecs
 import sys
+from excelMapping import EXCEL_ROW_MAPPING 
 
-# you must program with 2 input filles and a name for your output excel file
-# eventually change so that you run with nothing and force while loop to take
-#in  the 3 inputs
-# LIMITATIONS:
-# -  Only supports excel file through 26 values (Need to feed it more of the excel columns)
-# Maximum excel coulm XFD 
-# Formula: 	# ws.write(2, 2, xlwt.Formula("A3+B3"))
-# Instead of free row and column
-# create a hash table, check before inserting, hash after 
-## supports total right now
-## Need to add support for Labels
-# 
+## Currently:
+# - must run program with 2 input files and a name for your output excel file
+# - assumes table and rules are well formed
 
+# TODO:
+# - run program with zero inputs, while true loop to collect file names
+# and output excel name
+# - instead of free row and column, find a better way to specific free/ occupied
+# 	- hash table? (check before inserting, hash after)
+# 	- need to add support for Labels
 
 
-EXCEL_ROW_MAPPING = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'J', 10: 'K', 11: 'L', 12: 'M', 13: 'N', 14: 'O', 15: 'P', 16: 'Q', 17: 'R', 18: 'S', 19: 'T', 20: 'U', 21: 'V', 22: 'W', 23: 'X', 24: 'Y', 25: 'Z'}
+# formulaString
+# worksheet: ws
+# ws.write(2, 2, xlwt.Formula(formulaString))
+
 
 EXCEL_FILE_EXTENSION = ".xls"
 TABLE_BUFFER_ROW = 2
@@ -36,12 +37,15 @@ def main():
 	ws = createWorksheet(wb, "abcdefghijklmnop")
 
 	# parse initial table
-	(freeRow, freeCol, types, values) = createInitialTable(wb, ws, typeFileName, valueFileName,
+	(freeRow, freeCol, types, values) = createInitialTable(wb, ws, typeFileName,
+		 valueFileName,
 		 freeRow, freeCol)
 
 	# calculate input sums/ # inputs per table 
-	(freeRow, freeCol, intermediateSumRow) = createSumFromDifficulty(wb, ws, types, values, freeRow, freeCol)
-	(freeRow, freeCol, numInputsColumn) = createNumberOfInputs(wb, ws, types, values, freeRow, freeCol)
+	(freeRow, freeCol, intermediateSumRow) = createSumFromDifficulty(wb, ws,
+		 types, values, freeRow, freeCol)
+	(freeRow, freeCol, numInputsColumn) = createNumberOfInputs(wb, ws, types,
+		 values, freeRow, freeCol)
 
 	# input rules 
 	# Parse rules under the assumption that they 
@@ -65,7 +69,8 @@ def limitTotalSum(operator, totalValue, values, intermediateSumRow):
 
 
 	innerFormulaStr = "SUM(" + rowStartStr + ":" + rowEndStr + ")"
-	formulaStr = "IF(" + innerFormulaStr + operator + str(totalValue) + "," + "0" + "," + "1" + ")"
+	formulaStr = "IF(" + innerFormulaStr + operator + str(totalValue) \
+		 + "," + "0" + "," + "1" + ")"
 	return formulaStr
 
 #def limitTotalInputs(operator, totalNumber, types, numInputsColumn):
@@ -81,7 +86,8 @@ def properInputFiles():
 		outputFileName = sys.argv[3]
 		return (typeFileName, valueFileName, outputFileName)
 	except IndexError or TypeError:
-		print "Incorrect run of program. Must run as python2 createTable.py types.txt values.txt outputFileName"
+		print "Incorrect run of program. Must run as python2 createTable.py \
+		 types.txt values.txt outputFileName"
 		sys.exit(0) 
 
 def createWorkbook():
@@ -184,7 +190,8 @@ def createSumFromDifficulty(wb, ws, types, values, freeRow, freeCol):
 		startRowStr = colLetter + str(startRow)
 		endRowStr = colLetter + str(endRow)
 
-		formulaStr = "SUM(" + startRowStr + ":" + endRowStr  + ")" + "*" + multiplierRowStr
+		formulaStr = "SUM(" + startRowStr + ":" + endRowStr  + ")" + "*"  \
+			+ multiplierRowStr
 
 		row = freeRow + TABLE_BUFFER_ROW
 		col = adjIndex

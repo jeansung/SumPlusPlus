@@ -1,7 +1,6 @@
 Only allowed to choose from pre-specified rule types
 Right now - must fully specify everything (no dependency rules like everything else yet)
 
-
 constraints on types of inputs
 - categories (A, B C) individual must have </=/> inputs 
 - together (A, B, C) must have </=/> inputs 

@@ -71,9 +71,8 @@ Python is my host language. I made this decision largely because
 
 I had decided to make tables just a list of values and a list of rules (in a plain text file) to simplify the table creation process. 
 
-<!--
-TODO : More about the grammar of the rules. 
--->
+A major syntax decision I made this week that is different from the original design is the development of a grammar for the rule creation, which is specified in `prelim_grammar.md` document. 
+
 **An overview of the architecture of your system.**
 
 <!--

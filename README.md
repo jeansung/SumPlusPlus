@@ -8,18 +8,11 @@ Harvey Mudd College
 
 Right now: Pre - prototype phase 
 
-Like to the video of the run through of the current program 
+There is a video [here]() of the run through of the current prototype. 
 
+The current system architecture is: 
 
-
-
-
-
-
-[Click here](https://drive.google.com/open?id=0B9z84Or5GzOnckhVZ0VnMTdVaFk&authuser=0) for the pre-prototype mockup.
-
-This is what a sample program run might look like (rough mock up): 
-![](https://docs.google.com/drawings/d/1s66OigYr9tjV2eS_UL-D5rtic1B1mTxPinMK_0AyMF4/pub?w=960&h=720)
+![]()
 
 See [the project notebook](https://github.com/jeansung/project-notebook) for the latest updates on this project's progress.
 

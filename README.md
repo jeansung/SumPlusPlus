@@ -6,7 +6,8 @@ Harvey Mudd College
 
 ## Current State of the Project
 
-Right now: Pre - prototype phase 
+Right now: Prototype! 
+
 
 There is a video [here](https://drive.google.com/drive/#folders/0B9z84Or5GzOnQnNKdm1pY01GMUU) of the run through of the current prototype. 
 

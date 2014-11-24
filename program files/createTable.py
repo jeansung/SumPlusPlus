@@ -14,6 +14,12 @@ from excelMapping import EXCEL_ROW_MAPPING
 # 	- hash table? (check before inserting, hash after)
 # 	- need to add support for Labels
 
+# Different Files 
+# File IO Functions with error checking for correctness
+# that have functions to return table and rules
+# Parse Rules
+#  
+# Creating the initial table on Excel table 
 
 # formulaString
 # worksheet: ws

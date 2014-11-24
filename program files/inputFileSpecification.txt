@@ -1,0 +1,7 @@
+# Lines that start with a # sign are ignored
+# so are blank spaces
+# First line is types comma separated
+# Second Line is values, comma separated 
+# Then List of rules, line separated 
+alpha, beta, gamma
+1, 2, 3, 4

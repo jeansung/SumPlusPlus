@@ -69,6 +69,8 @@ def main():
 
 ## Rule Creation Methods (to change after grammar)
 ## Return Strings right now
+# =IF(SUM(B6:D6)>10,0,1)
+# If the total sum is greater than 10, "GOOD" otherwise bad 
 def limitTotalSum(operator, totalValue, values, intermediateSumRow):
 	rowStart = 1
 	rowStartStr = EXCEL_ROW_MAPPING[rowStart] + str(intermediateSumRow)

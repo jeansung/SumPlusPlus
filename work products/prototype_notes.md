@@ -29,6 +29,7 @@ Between now and when the final project and presentation is due, there are 3 week
 
 ### Things to Check out! 
 
-* Revised grammar, file [here](https://github.com/jeansung/project/blob/master/work%20products/revised_grammar.md)
-=> sample excel sandbox talbe 
-=> parser file 
+* Revised grammar, file in `work products` directory
+* Parser and Parser Test in `program files/parsing` directory
+* Sample Excel Sandbox Table, `dsl_prototype.xls` in the `program files` directory 
+* Video walkthrough of the prototype, [here](https://drive.google.com/a/g.hmc.edu/file/d/0B9z84Or5GzOnaXhDMXFVLUpaOUk/view?usp=sharing)

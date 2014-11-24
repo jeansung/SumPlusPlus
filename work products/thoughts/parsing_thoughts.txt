@@ -1,0 +1,38 @@
+name typeRule Categories (types) (relation) must have (operator) (totalInputs) inputs. ;
+
+name = [typeRule, [types, ], relation, operator, totalInputs]
+
+
+typeRule, relation, operator, will probably be parts of a struct 
+types will be an array of 1 or more things 
+
+
+
+name valueRule Categories (types) (relation) must sum to (operator) (totalValues). ;
+
+maybe_some(*thing)
+>>> parse("hello world", maybe_some(word))
+['hello', 'world']
+>>> parse("", maybe_some(word))
+[]
+
+
+
+// at least one thing 
+some(*thing)
+
+A = [valueRule, [types], relation, operator, totalInputs]
+B = [typeRule, ]
+
+C, set of rules = [A, B]
+
+
+
+
+give string identifier and use python dictionary 
+
+where and A and B are the string name identifier 
+
+
+valueRule and typeRule are types of genericRule 
+ 

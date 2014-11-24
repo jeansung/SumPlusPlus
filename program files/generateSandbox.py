@@ -2,6 +2,7 @@ import xlwt
 import codecs
 import sys
 from excelMapping import EXCEL_ROW_MAPPING 
+from utilityIO import *
 
 ## Currently:
 # - must run program with 2 input files and a name for your output excel file
@@ -93,7 +94,7 @@ def properInputFiles():
 		outputFileName = sys.argv[3]
 		return (typeFileName, valueFileName, outputFileName)
 	except IndexError or TypeError:
-		print "Incorrect run of program. Must run as python2 createTable.py \
+		print "Incorrect run of program. Must run as python2 generateSandbox.py \
 		 types.txt values.txt outputFileName"
 		sys.exit(0) 
 

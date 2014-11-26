@@ -1,4 +1,4 @@
-## Weighted Sum with Custom Constraints Tool
+## sum plus plus
 [Final Project](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html) for *Domain Specific Languages*, Fall 2014  
 [Jean Sung](http://cs.hmc.edu/~jsung)  
 Harvey Mudd College 

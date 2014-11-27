@@ -1,0 +1,48 @@
+
+p = parse("sample_rule = valueRule Categories [a, b, c,] \
+	each must have greater_than 5 inputs.", genericRule)
+print (p)
+print ("name: ", p.name)
+print ("type of rule: ", p.rule_type.typing)
+print ("types list: ", p.rule_type.type_list)
+print ("relation: ", p.rule_type.relation)
+print ("operator: ", p.rule_type.operator)
+print("value: ", p.rule_type.value)
+
+print ("\n\n")
+
+q = parse("sample_rule2 = typeRule Categories [a, b, c, d, e,] \
+	together must sum to exactly_to 9454.0.", genericRule)
+print (q)
+print ("name: ", q.name)
+print ("type of rule: ", q.rule_type.typing)
+print ("types list: ", q.rule_type.type_list)
+print ("relation: ", q.rule_type.relation)
+print ("operator: ", q.rule_type.operator)
+print("value: ", q.rule_type.value)
+
+Output 
+WL-219-33:parsing Jean$ python rule_parser.py
+genericRule([], name=u'sample_rule')
+name:  sample_rule
+type of rule:  valueRule
+types list:  TypeList([u'a', u'b', u'c'])
+relation:  each
+operator:  greater_than
+value:  5
+
+
+
+genericRule([], name=u'sample_rule2')
+name:  sample_rule2
+type of rule:  typeRule
+types list:  TypeList([u'a', u'b', u'c', u'd', u'e'])
+relation:  together
+operator:  exactly_to
+value:  9454.0
+WL-219-33:parsing Jean$ 
+
+
+
+
+

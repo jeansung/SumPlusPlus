@@ -1,0 +1,2 @@
+tRule1 = typeRule Categories [a, b,] together must have less_than 4 inputs.
+tRule2 = typeRule Categories [a, b, c,] each must have exactly_to 8 inputs.

@@ -1,0 +1,2 @@
+t1 = typeRule Categories [potato,] together must have less_than 6 inputs.
+t2 = typeRule Categories [potato, poo,] each must have greater_than 2 inputs.

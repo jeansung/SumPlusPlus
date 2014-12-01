@@ -24,6 +24,7 @@ types = []
 values = []
 typeRowMapping = {}
 valueColMapping = {}
+valueColMappingReverse = {}
 
 def main():
 	# read table files
@@ -53,7 +54,8 @@ def main():
 	# write to auxiliary text file
 
 	infoString = createExcelInfo(outputFileName, freeRow, freeCol, \
-		numInputsCol, intermediateSumRow, typeRowMapping, valueColMapping)
+		numInputsCol, intermediateSumRow, typeRowMapping, valueColMapping, \
+		valueColMappingReverse)
 	writeToFile(infoString, outputFileName)
 	
 	return 
@@ -80,6 +82,7 @@ def createInitialTable(ws, types, values):
 		adjIndex = valueIndex + 1
 		currentValue = values[valueIndex]
 		valueColMapping[currentValue] = adjIndex
+		valueColMappingReverse[adjIndex] = currentValue
 		ws.write(0, adjIndex, currentValue)
 		global freeCol
 		freeCol = adjIndex +1 

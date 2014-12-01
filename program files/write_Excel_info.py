@@ -7,10 +7,12 @@ TITLE = "This is a support file for the Excel Sandbox file generated. DO NOT MO\
 DIFY!! \n\n"
 
 def createExcelInfo(outputFileName, freeRow, freeCol, numInputsCol, \
-	intermediateSumRow, typeRowMappingDictionary, valueColMappingDictionary):
+	intermediateSumRow, typeRowMappingDictionary, valueColMappingDictionary, \
+	valueColMappingDictionaryReverse):
 	outputContents = [outputFileName, str(freeRow), str(freeCol), \
 		str(numInputsCol), str(intermediateSumRow), \
-		str(typeRowMappingDictionary), str(valueColMappingDictionary)]
+		str(typeRowMappingDictionary), str(valueColMappingDictionary), \
+		str(valueColMappingDictionaryReverse)]
 	infoString = TITLE + "\n".join(outputContents)
 
 	return infoString

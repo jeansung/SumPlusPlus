@@ -1,0 +1,5 @@
+About the linear programming. I'd recommend not trying to show contradictions at this stage of your project. That would be a nice feature you can think about adding later. I think working on making a working prototype should come first.
+
+For the final excel doc that is made, consider having two sheets, so one of them has all the messy stuff and the first one looks nice. Also, instead of just a YES or NO displayed, you could also display how many points that constraint has so far and how many it needs. Kind of like a progress indicator. I could see someone using the excel doc just fine even if it is impossible to satisfy all the constraints. I think the point of it is to assist in meeting as many as possible, not to assure them it is possible or not to satisfy all of them.
+
+I recommend you package your project with `virtualenv` and a `bootstrap` script. Check out my project or Paul's project to see how this is done. It means you down't have to have all the external libraries in your github repository. And it will make it easier to allow someelse to use your language on their computer. Right now I can't quite figure out how to do anything.

@@ -4,12 +4,13 @@ from source.generateSandbox import *
 from source.generateConstraints import *
 from source.rule_parser import *
 from source.reference_dictionaries import *
+from source.run_sample import *
 from xlrd import open_workbook
 from xlwt import *
 from xlutils.copy import copy
 import codecs
 import sys
-import os.path
+import os
 
 # Rule variables
 ruleStrings = ""
@@ -30,6 +31,20 @@ def main():
 
 	# Create Rule Mode Flag
 	isCreateRule = isRuleCreate(intOption)
+
+	# isSample Flag
+	isSample = isSampleProgram(intOption) 
+		
+	# Defer to Sample Run 
+	if (isSample):
+		sampleType = whichSample(intOption)
+		if (sampleType == "sampleprogram1"):
+			runSample1()
+		elif (sampleType == "sampleprogram2"):
+			runSample2()
+		return
+
+
 	# Collect Table
 	(types, values) = collectTable()
 
@@ -61,6 +76,7 @@ def main():
 	# Save and Quit 
 	wb.save(os.path.dirname(__file__) + OUTPUT_LOCATION \
 	 + outputFileName + EXCEL_FILE_EXTENSION)
+	return
 
 
 # automatically runs main method when script runs

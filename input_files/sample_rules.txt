@@ -1,0 +1,3 @@
+t1 = typeRule Categories [alpha, beta, gamma,] together must have less_than 6 inputs.
+t2 = typeRule Categories [alpha,] each must have exactly_to 2 inputs.
+t3 = valueRule Categories [alpha, beta,] together must sum to greater_than 3.

@@ -1,2 +1,12 @@
+# general 
 *.pyc
 venv/**
+
+# keep sample programs, but ignore all other input / output 
+input_files/*.txt
+!input_files/sample_table.txt
+!input_files/sample_rules.txt
+output_files/*.xls
+!output_files/sample1_output.xls
+!output_files/sample2_output.xls
+

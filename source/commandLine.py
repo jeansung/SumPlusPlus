@@ -4,8 +4,13 @@ import os.path
 from rule_parser import *
 
 # Messages 
-GET_INT_OPTION = "Please enter: \n[0] for table creation \n[1] for rule generation \
-			 \n[-1] for quit. \n"
+GET_INT_OPTION = "Please enter: \n \
+	 [0] for Table Creation \n \
+	 [1] for Rule Generation \n \
+ 	 [2] for Sample Program 1: Table Creation \n \
+ 	 [3] for Sample Program 2: Rule Generation \n \
+ 	 [-1] for Quit. \n\n"
+
 TRY_AGAIN_MESSAGE = "Try again. Not a valid supported option"
 GOODBYE_MESSAGE = "Okay, goodbye."
 GET_TABLE_FILE = "Table file name (txt file) or Q for quit: "
@@ -15,13 +20,17 @@ GET_OUTPUT_FILENAME = "Output File Name or Q for quit: "
 # Default input location
 INPUT_LOCATION = "/../input_files/"
 
+# Max supported int option
+MAX_INT_OPTION = 3
+
+
 # Public Methods 
 def processInitialOptions():
 	while True:
 		try:
 			intOption = int(raw_input(GET_INT_OPTION))
 			break
-		except ValueError:
+		except ValueError or (intOption > MAX_INT_OPTION):
 			print TRY_AGAIN_MESSAGE
 
 	if (intOption == -1):
@@ -33,6 +42,16 @@ def processInitialOptions():
 def isRuleCreate(intOption):
 	return intOption == 1
 
+def isSampleProgram(intOption):
+	return intOption > 1
+
+def whichSample(intOption):
+	if (intOption == 2):
+		return "sampleprogram1"
+	elif (intOption == 3):
+		return "sampleprogram2"
+	else:
+		return
 
 def collectTable():
 

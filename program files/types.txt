@@ -1,9 +1,0 @@
-alpha
-beta
-gamma
-potato
-epsilon
-iota
-sigma
-tau
-pi

@@ -1,3 +1,0 @@
-sample category 1
-sample category 2
-sample category 3

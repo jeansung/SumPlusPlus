@@ -1,9 +1,0 @@
-This is a support file for the Excel Sandbox file generated. DO NOT MODIFY!! 
-
-SAMPLE10
-7
-7
-4
-6
-{'poo': 5, 'beta': 3, 'gammar': 4, 'potato': 2}
-{1.0: 1, 2.0: 2, 3.0: 3}

@@ -1,0 +1,4 @@
+t1 = typeRule Categories [potato,] together must have less_than 6 inputs.
+t2 = typeRule Categories [potato, poo,] each must have greater_than 2 inputs.
+t3 = valueRule Categories [beta, gamma, potato,] together must sum to greater_than 5.6.
+t4 = valueRule Categories [potato, poo,] each must sum to exactly_to 64.2.

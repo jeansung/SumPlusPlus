@@ -7,12 +7,12 @@ A weighted sum with custom constraints tool created by [Jean Sung](http://cs.hmc
 Sum Plus Plus is a tool to help you organize your thoughts regarding possible combinations of weighted types to satisfy custom constraints. 
 
 Quick find help:
-* [Instructions](https://github.com/jeansung/SumPlusPlus#installing)  
+* [Instructions](https://github.com/jeansung/SumPlusPlus#instructions--help)  
 * [Installing](https://github.com/jeansung/SumPlusPlus#installing)
 * [Sample Programs](https://github.com/jeansung/SumPlusPlus#sample-programs)
 * [Creating your own files](https://github.com/jeansung/SumPlusPlus#creating-your-own-files)
 * [Running the test files](https://github.com/jeansung/SumPlusPlus#running-test-files)
-* [Issues and feedback](https://help.github.com/articles/creating-an-issue/)
+* [Issues and feedback](https://github.com/jeansung/SumPlusPlus#issues--feedback)
 
 ## Instructions & Help 
 

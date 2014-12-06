@@ -6,6 +6,14 @@ A weighted sum with custom constraints tool created by [Jean Sung](http://cs.hmc
 
 Sum Plus Plus is a tool to help you organize your thoughts regarding possible combinations of weighted types to satisfy custom constraints. 
 
+Quick find help:
+* [Instructions](https://github.com/jeansung/SumPlusPlus#installing)  
+* [Installing](https://github.com/jeansung/SumPlusPlus#installing)
+* [Sample Programs](https://github.com/jeansung/SumPlusPlus#sample-programs)
+* [Creating your own files](https://github.com/jeansung/SumPlusPlus#creating-your-own-files)
+* [Running the test files](https://github.com/jeansung/SumPlusPlus#running-test-files)
+* [Issues and feedback](https://help.github.com/articles/creating-an-issue/)
+
 ## Instructions & Help 
 
 ### Installing
@@ -103,7 +111,7 @@ In order to run the test files, `cd` into the `testing` directory. Use the comma
 ![](tutorial_images/testing.png)
 
 ## Issues & Feedback
-If you find an unexpected error or have any general feedback, please [file an issue](https://help.github.com/articles/creating-an-issue/) on GitHub.
+If you find an unexpected error or have any general feedback, please [file an issue](https://help.github.com/articles/creating-an-issue/) on GitHub. 
 
 
 

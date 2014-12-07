@@ -21,7 +21,8 @@ Quick find help:
 
 **Before you install** Your machine must have  
 * `pip`
-* `python v 2.7.x`
+* python v 2.7.x
+* a program that can open xls files (e.g. Excel, Numbers, etc)
 
 Find help for installing [pip](https://pypi.python.org/pypi/pip) and [python 2.7.x](https://www.python.org/ftp/python/2.7.8/python-2.7.8-macosx10.6.dmg).
 

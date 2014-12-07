@@ -16,9 +16,9 @@ import os
 ruleStrings = ""
 parsedRules = ""
 
-# Default input location
+# Default output location
 OUTPUT_LOCATION = "output_files/"
-
+OPEN_COMMAND = "open "
 # Excel File extension
 EXCEL_FILE_EXTENSION = ".xls"
 
@@ -73,9 +73,10 @@ def main():
 		nameFormulaPairs = generateExcelFormulas(parsedRules)
 		writeRulesToExcel(ws, nameFormulaPairs, ruleStrings)
 
-	# Save and Quit 
-	wb.save(os.path.dirname(__file__) + OUTPUT_LOCATION \
-	 + outputFileName + EXCEL_FILE_EXTENSION)
+	# Save and Launch
+	newFile = OUTPUT_LOCATION + outputFileName + EXCEL_FILE_EXTENSION
+	wb.save(os.path.dirname(__file__) + newFile)  
+	os.system(OPEN_COMMAND + newFile)
 	return
 
 

@@ -1,0 +1,6 @@
+venv/**
+source/**
+testing**
+run.py
+input_files/**
+output_files/**

@@ -10,7 +10,7 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <title>Sum Plus Plus  by jeansung</title>
+    <title>Sampledelete by jeansung</title>
   </head>
 
   <body>
@@ -18,52 +18,160 @@
       <div class="inner">
 
         <header>
-          <h1>Sum Plus Plus </h1>
-          <h2>A weighted sum with custom constraints tool.</h2>
+          <h1>Sampledelete</h1>
+          <h2>to copy over readme file </h2>
         </header>
 
         <section id="downloads" class="clearfix">
-          <a href="https://github.com/jeansung/SumPlusPlus/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-          <a href="https://github.com/jeansung/SumPlusPlus/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
-          <a href="https://github.com/jeansung/SumPlusPlus" id="view-on-github" class="button"><span>View on GitHub</span></a>
+          <a href="https://github.com/jeansung/sampleDelete/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/jeansung/sampleDelete/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/jeansung/sampleDelete" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
 
         <hr>
 
         <section id="main_content">
-          <p>### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+          <h2>
+<a id="sum-plus-plus" class="anchor" href="#sum-plus-plus" aria-hidden="true"><span class="octicon octicon-link"></span></a>sum plus plus</h2>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p><img src="logo%20files/sumplusplus_logo_png.png" alt=""></p>
+
+<p>A weighted sum with custom constraints tool created by <a href="http://cs.hmc.edu/%7Ejsung">Jean Sung</a> for the <a href="http://www.cs.hmc.edu/%7Ebenw/teaching/cs111_fa14/project.html">Final Project</a> in <em>Domain Specific Languages</em>, Fall 2014. The project's updates and how to install/run instructions can be found here. Keep up with the progress by visiting the <a href="https://github.com/jeansung/project-notebook">project notebook</a>. </p>
+
+<p>Sum Plus Plus is a tool to help you organize your thoughts regarding possible combinations of weighted types to satisfy custom constraints. </p>
+
+<p>Quick find help:</p>
+
+<ul>
+<li>
+<a href="https://github.com/jeansung/SumPlusPlus#instructions--help">Instructions</a><br>
+</li>
+<li><a href="https://github.com/jeansung/SumPlusPlus#installing">Installing</a></li>
+<li><a href="https://github.com/jeansung/SumPlusPlus#sample-programs">Sample Programs</a></li>
+<li><a href="https://github.com/jeansung/SumPlusPlus#creating-your-own-files">Creating your own files</a></li>
+<li><a href="https://github.com/jeansung/SumPlusPlus#running-test-files">Running the test files</a></li>
+<li><a href="https://github.com/jeansung/SumPlusPlus#issues--feedback">Issues and feedback</a></li>
+</ul>
+
+<h2>
+<a id="instructions--help" class="anchor" href="#instructions--help" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instructions &amp; Help</h2>
+
+<h3>
+<a id="installing" class="anchor" href="#installing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installing</h3>
+
+<p><strong>Note:</strong> At this time, there is only <em>tested</em> support for Mac OSX 10.8+. </p>
+
+<p><strong>Before you install</strong> Your machine must have  </p>
+
+<ul>
+<li><code>pip</code></li>
+<li>python v 2.7.x</li>
+<li>a program that can open xls files (e.g. Excel, Numbers, etc)</li>
+</ul>
+
+<p>Find help for installing <a href="https://pypi.python.org/pypi/pip">pip</a> and <a href="https://www.python.org/ftp/python/2.7.8/python-2.7.8-macosx10.6.dmg">python 2.7.x</a>.</p>
+
+<ol>
+<li>Download the Github Repo as a zip file. 
+<img src="tutorial_images/download.png" alt="">
+</li>
+<li>Extract the Zip file on the desktop. Open a <code>terminal</code> window and <code>cd</code> into the Desktop directory. Run the command <code>sudo ./bootstrap.sh</code> to install the python packages. You might be prompted for the user password, if so, enter it. 
+<img src="tutorial_images/runBootstrap.png" alt="">
+<img src="tutorial_images/installPackages.png" alt="">
+</li>
+</ol>
+
+<h3>
+<a id="sample-programs" class="anchor" href="#sample-programs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Programs</h3>
+
+<p>To run the sample programs, run <code>python run.py</code>. Type <code>2</code> or <code>3</code> to run the sample programs. The Excel file should open after the program runs. </p>
+
+<p>Here is a sample run of the program with <code>table</code> and <code>rules</code> included. 
+<img src="tutorial_images/sampleRunTerminal.png" alt="">
+<img src="tutorial_images/sampleRunExcel.png" alt="">. </p>
+
+<p>Once the Excel file is open you can manipulate the inputs until the "bads" turn to "good". The blue box shows the area where you can manipulate. 
+<img src="tutorial_images/sandbox.png" alt=""></p>
+
+<h3>
+<a id="creating-your-own-files" class="anchor" href="#creating-your-own-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating your own files</h3>
+
+<p><strong>General I/O Notes</strong><br>
+Input files, the <code>table</code> files and the <code>rule</code> files must live in the <code>input_files</code> directory. Output files, the created Excel sandbox files, are generated in the<code>output_files</code>. You must be in the top level directory when you run <code>run.py</code>, which is the file that runs the program.</p>
+
+<p><strong>Creating the table and rules:</strong><br>
+A table is a set of types and values. List the types in a comma separated string on the first line of the table file. List the values (can be int values or float values) as a comma separated string on the second line of the table file.</p>
+
+<p>Here is a sample of the table file: 
+<img src="tutorial_images/sample_table.png" alt=""></p>
+
+<p>A set of rules is a collection of newline separated rule strings. There are two types of rules, value rules and type rules. Value rules constrain the the weighted sum of one or more individual categories or a collection of categories together. Type rules constrain the number of inputs of one or more categories or a collection of categories together. </p>
+
+<p>Here is the grammar that the rules must adhere to. </p>
+
+<pre><code>// primitive things 
+letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
+       | "H" | "I" | "J" | "K" | "L" | "M" | "N"
+       | "O" | "P" | "Q" | "R" | "S" | "T" | "U"
+       | "V" | "W" | "X" | "Y" | "Z" ;
+digit = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+decimal_point = "." ;
+decimal_value = { digit }, decimal_point, { digit } ;
+
+// name is an identifier for a rule
+name = { letter } ;
+
+// Total inputs must be an int
+// Total of the value may be a double
+totalInputs = { digit } ;
+totalValues = { decimal_value } ;
+
+// A type is any word (i.e. made up of letters)
+type = { letter }; 
+types = { type }
+
+// Other rule parts
+operator = less_than | exactly_to | greater_than ;
+relation = "each" | "together" ;
+
+// Rule types 
+typeRule =  Categories (types) (relation) must have (operator) \
+            (totalInputs) inputs. ;
+valueRule = Categories (types) (relation) must sum to (operator) \
+            (totalValues). ;
+genericRule = typeRule | valueRule ;
+Rule = name,  "=", genericRule;
+Rules = {Rule} ; 
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Here is a sample of the rules file:
+<img src="tutorial_images/sample_rules.png" alt=""></p>
+
+<p><strong>Creating the Excel Sandbox file:</strong></p>
+
+<p>To create an initial Excel Sandbox table you must have a table file in the <code>input_files</code> directory. Then, use the command <code>python run.py</code> and type <code>0</code> for the option. 
+<img src="tutorial_images/table_creation.png" alt=""></p>
+
+<p>If you want an Excel file with custom constraints too, you must have a rule file in the <code>input_files</code> directory. Then, use the command <code>python run.py</code> and type <code>1</code> for the option. 
+<img src="tutorial_images/rule_generation.png" alt=""></p>
+
+<p>All output files get written into the <code>output_files</code> directory. 
+<img src="tutorial_images/output_location.png" alt=""></p>
 
 <h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a id="running-test-files" class="anchor" href="#running-test-files" aria-hidden="true"><span class="octicon octicon-link"></span></a>Running test files</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>In order to run the test files, <code>cd</code> into the <code>testing</code> directory. Use the command <code>python -m unittest discover</code> in order to run the tests. 
+<img src="tutorial_images/testing.png" alt=""></p>
 
-<h3>
-<a id="rather-drive-stick" class="anchor" href="#rather-drive-stick" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<h2>
+<a id="issues--feedback" class="anchor" href="#issues--feedback" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues &amp; Feedback</h2>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>If you find an unexpected error or have any general feedback, please <a href="https://help.github.com/articles/creating-an-issue/">file an issue</a> on GitHub. </p>
         </section>
 
         <footer>
-          Sum Plus Plus  is maintained by <a href="https://github.com/jeansung">jeansung</a><br>
+          Sampledelete is maintained by <a href="https://github.com/jeansung">jeansung</a><br>
           This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
         </footer>
 

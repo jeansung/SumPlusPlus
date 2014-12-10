@@ -1,5 +1,7 @@
 import os
 
+# Functions that mimics the run of samples
+# And opens the appropriate file after
 def runSample1():
 	print "reading in sample program 1's table file"
 	print " ... "

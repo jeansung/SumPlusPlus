@@ -3,7 +3,7 @@ from __future__ import unicode_literals, print_function
 from pypeg2 import *
 from decimal import Decimal
 
-# Grammar 
+# Final Grammar 
 '''
 // primitive things 
 letter = "A" | "B" | "C" | "D" | "E" | "F" | "G"
@@ -58,7 +58,7 @@ class RuleName(str):
 class RuleType(Keyword):
 	grammar = Enum(K("valueRule"), K("typeRule"))
 
-#Right now you have to put a comma after EVERY type, including the last one
+#There must be a COMMA after EVERY type, including the last one
 class Type(str):
 	grammar = word, ","
 

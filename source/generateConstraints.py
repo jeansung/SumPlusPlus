@@ -20,7 +20,10 @@ CURRENT_VALUE = 3
 TARGET_VALUE = 4
 
 
+# Public methods 
 
+# Method to write the given excel formulas, along with the initial rules
+# for easier readability 
 def writeRulesToExcel(ws, nameFormulaPairs, ruleStrings):
 	#find space to write it
 	ruleStringCol = 0
@@ -65,6 +68,8 @@ def generateExcelFormulas(parsedRules):
 			print "Error. Non supported rule type."
 			sys.exit(0)
 	return nameFormula
+
+## Private methods 
 
 # Creating a typeRule
 # Input: Parsed Type Rule

@@ -1,3 +1,6 @@
+
+# Holds the globals of the program
+# Initializer 
 def init():
 	global freeRow
 	freeRow = 0

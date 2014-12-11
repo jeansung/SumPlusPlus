@@ -58,12 +58,8 @@ class RuleName(str):
 class RuleType(Keyword):
 	grammar = Enum(K("valueRule"), K("typeRule"))
 
-#Right now you have to put a comma after EVERY type, including the last one
-class Type(str):
-	grammar = word, ","
-
 class TypeList(List):
-	grammar = "[", some(Type), "]"
+	grammar =  grammar = "[", csl(word), "]"
 
 class Relation(Keyword):
 	grammar = Enum(K("each"), K("together"))

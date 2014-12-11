@@ -17,7 +17,7 @@ ruleStrings = ""
 parsedRules = ""
 
 # Default output location
-OUTPUT_LOCATION = "output_files/"
+OUTPUT_LOCATION = "/output_files/"
 OPEN_COMMAND = "open "
 # Excel File extension
 EXCEL_FILE_EXTENSION = ".xls"
@@ -75,8 +75,9 @@ def main():
 
 	# Save and Launch
 	newFile = OUTPUT_LOCATION + outputFileName + EXCEL_FILE_EXTENSION
-	wb.save(os.path.dirname(__file__) + newFile)  
-	os.system(OPEN_COMMAND + newFile)
+	localDir = os.path.dirname(os.path.realpath(__file__)) 
+	wb.save(localDir+ newFile)  
+	os.system(OPEN_COMMAND + localDir + newFile)
 	return
 
 

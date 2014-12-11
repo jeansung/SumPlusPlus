@@ -5,7 +5,7 @@ import unittest
 class TestParser(unittest.TestCase):
 
     def test_SimpleTypeRule(self):
-        exampleTypeRule = parse ("type_rule = typeRule Categories [a,] \
+        exampleTypeRule = parse ("type_rule = typeRule Categories [a] \
             together must have less_than 6 inputs.", genericRule)
         self.assertEqual(genericRule([], name=u'type_rule'), exampleTypeRule)
         print exampleTypeRule
@@ -15,9 +15,6 @@ class TestParser(unittest.TestCase):
         print "name: ", exampleTypeRule.name
         self.assertEqual(RuleType(u'typeRule'), \
             exampleTypeRule.rule_type.typing)
-        print "type: ", exampleTypeRule.rule_type.typing
-        self.assertEqual(TypeList([u'a',]), \
-            exampleTypeRule.rule_type.type_list)
         print"type list: ", exampleTypeRule.rule_type.type_list
         self.assertEqual(Relation("together"), \
             exampleTypeRule.rule_type.relation)
@@ -31,9 +28,9 @@ class TestParser(unittest.TestCase):
         
 
     def test_SeveralTypeRules(self):
-        rule1 = parse ("r1 = typeRule Categories [a, b, c, e,] together must \
+        rule1 = parse ("r1 = typeRule Categories [a, b, c, e] together must \
             have less_than 7 inputs.", genericRule)
-        rule2 = parse ("r2 = typeRule Categories [a, b,] together must \
+        rule2 = parse ("r2 = typeRule Categories [a, b] together must \
             have less_than 8 inputs.", genericRule)
         pass
 

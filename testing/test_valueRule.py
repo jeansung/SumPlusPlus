@@ -4,7 +4,7 @@ import unittest
 
 class TestParser(unittest.TestCase):
     def test_SimpleValueRule(self):
-        exampleValueRule = parse ("v2 = valueRule Categories [a, b, c,]\
+        exampleValueRule = parse ("v2 = valueRule Categories [a, b, c]\
          each must sum to exactly_to 9.5.", genericRule)
         self.assertEqual(genericRule([], name=u'v2'), exampleValueRule)
         print exampleValueRule
@@ -15,7 +15,7 @@ class TestParser(unittest.TestCase):
         self.assertEqual(RuleType(u'valueRule'), \
             exampleValueRule.rule_type.typing)
         print "type: ", exampleValueRule.rule_type.typing
-        self.assertEqual(TypeList(['a', 'b', 'c',]), \
+        self.assertEqual(TypeList(['a', 'b', 'c']), \
             exampleValueRule.rule_type.type_list)
         print"type list: ", exampleValueRule.rule_type.type_list
         self.assertEqual(Relation("each"), \
@@ -30,9 +30,9 @@ class TestParser(unittest.TestCase):
         
 
     def test_SeveralTypeRules(self):
-        rule1 = parse ("r1 = typeRule Categories [a, b, c, e,] together \
+        rule1 = parse ("r1 = typeRule Categories [a, b, c, e] together \
          must have less_than 7 inputs.", genericRule)
-        rule2 = parse ("r2 = typeRule Categories [a, b,] together \
+        rule2 = parse ("r2 = typeRule Categories [a, b] together \
          must have less_than 8 inputs.", genericRule)
         pass
 

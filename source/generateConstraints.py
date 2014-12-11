@@ -10,15 +10,24 @@ import globals
 # File that takes the rule and table info file to generate the constraints
 # and add to the Sandbox file so that it is a usable environment. 
 
-TRUE_MESSAGE = '"good"'
-FALSE_MESSSAGE = '"bad"'
 
+# Rule Excel Titles
 RULE_STRING_COL = 0
 RULE_NAME_COL = 1
 RULE_STATUS = 2
 CURRENT_VALUE = 3
 TARGET_VALUE = 4
+TRUE_MESSAGE = '"good"'
+FALSE_MESSSAGE = '"bad"'
+RULE_COL_TITLE = "Rule"
+RULE_NAME_COL_TITLE = "Name of the Rule"
+RULE_STATUS_COL_TITLE = "Rule met?"
 
+# Error messages
+UNSUPPORTED_RULE_TYPE_ERROR_MSG = "Error: Non supported rule type."
+UNSUPPORTED_RULE_RELATION_ERROR_MSG = "Error: Non supported relation."
+MISSING_TYPE_ERROR_MESSAGE = "Error: One of your rules references a type that \
+is not defined in your table."
 
 # Public methods 
 
@@ -32,9 +41,9 @@ def writeRulesToExcel(ws, nameFormulaPairs, ruleStrings):
 	startRow = globals.freeRow + 1
 
 	#  write titles
-	ws.write(startRow, RULE_STRING_COL, "Rule")
-	ws.write(startRow, RULE_NAME_COL, "Name of the Rule")
-	ws.write(startRow, RULE_STATUS, "Rule met?")
+	ws.write(startRow, RULE_STRING_COL, RULE_COL_TITLE)
+	ws.write(startRow, RULE_NAME_COL, RULE_NAME_COL_TITLE)
+	ws.write(startRow, RULE_STATUS, RULE_STATUS_COL_TITLE)
 
 	startRow = startRow + 1
 
@@ -57,6 +66,9 @@ def writeRulesToExcel(ws, nameFormulaPairs, ruleStrings):
 def generateExcelFormulas(parsedRules):
 	nameFormula = []
 	for r in parsedRules:
+		# Validation of rules 
+		if (not(verifyRules(r))): 
+			sys.exit(0)
 		ruleType = r.rule_type.typing 
 		if (ruleType == RuleType('valueRule')):
 			(name, formula) = createValueRule(r)
@@ -65,11 +77,20 @@ def generateExcelFormulas(parsedRules):
 			(name, formula) = createTypeRule(r)
 			nameFormula.append((name, formula))
 		else:
-			print "Error. Non supported rule type."
+			print UNSUPPORTED_RULE_ERROR_MSG
 			sys.exit(0)
 	return nameFormula
 
 ## Private methods 
+
+def verifyRules(r):
+	incoming = r.rule_type.type_list
+	for test in incoming:
+		if not(test in globals.typeRowMapping):
+			print MISSING_TYPE_MESSAGE
+			return False
+	return True 
+
 
 # Creating a typeRule
 # Input: Parsed Type Rule
@@ -101,7 +122,7 @@ def createTypeRule(r):
 			individualCheck.append(currentCheck)
 		logicalTest = "*".join(individualCheck)
 	else:
-		print "Error on the relation"
+		print 
 		sys.exit(0)
 
 	formulaStr = "IF(" + logicalTest + "," + TRUE_MESSAGE + "," + \
@@ -152,7 +173,7 @@ def createValueRule(r):
 			individualCheck.append(currentCheck)
 		logicalTest = "*".join(individualCheck)
 	else:
-		print "Error on the relation"
+		print UNSUPPORTED_RULE_RELATION_ERROR_MSG
 		sys.exit(0)
 
 	formulaStr = "IF(" + logicalTest + "," + TRUE_MESSAGE + "," + \

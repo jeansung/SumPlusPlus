@@ -28,23 +28,15 @@ class TestParser(unittest.TestCase):
         with self.assertRaises(SyntaxError):
             parse("undefinedRule", RuleType)
 
-    def test_Type(self):
-        exampleType = parse("a,", Type)
-        self.assertEqual("a", exampleType)
-        print exampleType
-
-        # Right now, enforces comma after each element
-        with self.assertRaises(SyntaxError):
-            parse("a", Type)
     
     def test_TypeList(self):
-        exampleTypeList = parse("[a, b, c,]", TypeList)
+        exampleTypeList = parse("[a, b, c]", TypeList)
         self.assertEqual(TypeList(['a', 'b', 'c']), exampleTypeList)
         print exampleTypeList
 
         # Again, should fail if Type fails 
         with self.assertRaises(SyntaxError):
-            parse("[a, b, c]", TypeList)
+            parse("[a, b, c,]", TypeList)
 
     def test_Relation(self):
         exampleRelation = parse("each", Relation)

@@ -6,16 +6,16 @@ class TestParser(unittest.TestCase):
     def test_IncorrectRules(self):
         # cannot parse cross rules 
         with self.assertRaises(SyntaxError):
-            parse ("type_rule = typeRule Categories [a,] together \
+            parse ("type_rule = typeRule Categories [a] together \
              must have less_than 6 inputs.", valueRule)
 
         # Type rules may NOT have a float total
         with self.assertRaises(SyntaxError):
-            parse ("type_rule = typeRule Categories [a,] together \
+            parse ("type_rule = typeRule Categories [a] together \
                 must have less_than 4.6 inputs.", genericRule)
 
         with self.assertRaises(SyntaxError):
-            parse ("type_rule = typeRule Categories [a,] together \
+            parse ("type_rule = typeRule Categories [a] together \
                 must sum to less_than 7 inputs.", genericRule)
 
         # TypeList cannot be empty 

@@ -12,4 +12,5 @@ output_files/*.xls
 
 #don’t keep things from gh-pages
 tutorial_images/**
+*.html
 

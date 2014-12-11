@@ -84,7 +84,7 @@
 <h3>
 <a id="sample-programs" class="anchor" href="#sample-programs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sample Programs</h3>
 
-<p>To run the sample programs, run <code>python run.py</code>. Type <code>2</code> or <code>3</code> to run the sample programs. The Excel file should open after the program runs. </p>
+<p>To run the sample programs, run <code> ./sumplusplus.sh </code>. Type <code>2</code> or <code>3</code> to run the sample programs. To use the table creation option, you must have a predefined table. To use the rule generation option, you must have a set of rules. The Excel file should open after the program runs. </p>
 
 <p>Here is a sample run of the program with <code>table</code> and <code>rules</code> included. 
 <img src="tutorial_images/sampleRunTerminal.png" alt="">
@@ -148,6 +148,9 @@ Rules = {Rule} ;
 <img src="tutorial_images/sample_rules.png" alt=""></p>
 
 <p><strong>Creating the Excel Sandbox file:</strong></p>
+
+<p> Note: You may have to change the permissions to allow the <code> sumplusplus.sh </code> file to execute. To do this, use the command <code> chmod +x sumplusplus.sh </code>. You maybe have to run this command with <code> sudo </code> and you have have to enter your password.
+<img src="tutorial_images/chmod.png" alt=""></p>
 
 <p>To create an initial Excel Sandbox table you must have a table file in the <code>input_files</code> directory. Then, use the command <code>./sumplusplus.sh </code> and type <code>0</code> for the option. 
 <img src="tutorial_images/table_creation.png" alt=""></p>

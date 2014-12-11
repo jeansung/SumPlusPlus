@@ -10,3 +10,6 @@ output_files/*.xls
 !output_files/sample1_output.xls
 !output_files/sample2_output.xls
 
+#don’t keep things from gh-pages
+tutorial_images/**
+

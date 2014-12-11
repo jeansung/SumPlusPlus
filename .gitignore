@@ -4,4 +4,3 @@ testing**
 run.py
 input_files/**
 output_files/**
-!tutorial_files/**

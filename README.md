@@ -1,5 +1,5 @@
 ## sum plus plus
-![](logo\ files/sumplusplus_logo_png.png)
+![](http://i.imgur.com/CrJds0B.png)
 
 
 A weighted sum with custom constraints tool created by [Jean Sung](http://cs.hmc.edu/~jsung) for the [Final Project](http://www.cs.hmc.edu/~benw/teaching/cs111_fa14/project.html) in *Domain Specific Languages*, Fall 2014. The project's updates and how to install/run instructions can be found here. Keep up with the progress by visiting the [project notebook](https://github.com/jeansung/project-notebook). 
